@@ -55,15 +55,8 @@ The entire infrastructure can be provisioned using the following command:
 
 ```bash
 terraform apply -var="project_id=<GCP_PROJECT_ID>"
+```
 
-
-📌 This sentence alone **checks the IaC requirement box**.
-
----
-
-### ✍️ Add “Why Kubernetes” (Design Justification)
-
-```markdown
 ### Deployment Model Choice
 
 The application is deployed using **managed Kubernetes (GKE Autopilot)**.
@@ -99,25 +92,11 @@ The application can be deployed using:
 
 ```bash
 kubectl apply -f k8s-specifications/
+```
 
-
-### 🎓 How to explain in demo
-> “After the cluster is ready, I deploy the application using Kubernetes manifests that describe the desired state.”
-
-✔️ This clearly shows **deployment after IaC**, which graders expect.
-
----
-
-# ✍️ STEP 9 — CI/CD Pipeline (Requirement 3 – Optional but Rewarded)
-
-This section proves you went **beyond the minimum**.
-
-Add:
-
-```markdown
 ## 7. CI/CD Pipeline
 
-An optional **CI/CD pipeline** was implemented using **GitHub Actions** to automate application deployment.
+A **CI/CD pipeline** was implemented using **GitHub Actions** to automate application deployment.
 
 ### Pipeline Overview
 - The pipeline is triggered automatically on every push to the `main` branch
@@ -136,13 +115,8 @@ The pipeline is triggered on code changes using the following configuration:
 on:
   push:
     branches: [ "main" ]
+```
 
-
----
-
-### ✍️ Explain Build & Test (HONEST + SAFE)
-
-```markdown
 ### Build and Test Stages
 
 The Example Voting App repository does not include automated test suites.
@@ -156,17 +130,8 @@ During the deployment stage, the pipeline applies the Kubernetes manifests to th
 
 ```bash
 kubectl apply -f k8s-specifications/
+```
 
-
-✔️ Requirement 3 **fully satisfied**
-
----
-
-# ✍️ STEP 10 — How to Run & Demo (VERY IMPORTANT)
-
-Add this section next:
-
-```markdown
 ## 8. Demo and Usage
 
 ### Verify Application Status
@@ -174,5 +139,6 @@ Add this section next:
 ```bash
 kubectl get pods
 kubectl get services
+```
 
 
