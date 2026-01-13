@@ -77,7 +77,7 @@ Networking, control plane, and node management are handled automatically by the 
 The entire infrastructure can be created using a single command:
 
 ```bash
-terraform apply -var="project_id=<GCP_PROJECT_ID>"
+tterraform apply -var="project_id=voting-app-gke-123"
 ```
 
 ### Kubernetes Deployment Model
