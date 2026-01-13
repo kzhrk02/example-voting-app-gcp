@@ -9,21 +9,40 @@ The solution covers the full lifecycle of:
 
 ## 1. Project Overview
 
-The Example Voting App is a microservices-based application consisting of multiple frontend services, backend workers, and databases.
+This project demonstrates the deployment of the **Example Voting App** as a cloud-native application.
 
-The goal of this project is to deploy the application in a cloud-native manner using managed cloud services while following best practices for automation, scalability, and reproducibility.
+The goal of the project is to:
+- Provision cloud infrastructure using Infrastructure as Code
+- Deploy a real application with frontend, backend, and database components
+- Run the application on managed Kubernetes in a public cloud
+- Automate deployment using a CI/CD pipeline
+
+The project focuses on correct cloud design and automation rather than application development.
+
 
 ## 2. Application Architecture
 
-The application consists of the following components:
+The Example Voting App was originally created by the Docker Samples team and is available as an open-source project (The application itself was not modified) 
 
-- **Vote service** – Web frontend for submitting votes
-- **Result service** – Web frontend for displaying voting results
+Repository:
+https://github.com/dockersamples/example-voting-app
+
+The following diagram illustrates the original application architecture.
+
+![Example Voting App Architecture](architecture.excalidraw.png)
+
+### Components
+
+- **Vote service** – Web frontend where users submit votes
+- **Result service** – Web frontend that displays voting results
 - **Worker service** – Backend service that processes votes
-- **Redis** – In-memory data store for temporary vote storage
-- **PostgreSQL** – Persistent database for results
+- **Redis** – Temporary in-memory storage for votes
+- **PostgreSQL** – Persistent storage for final results
 
 All components are containerized and deployed as Kubernetes pods.
+
+The Vote service sends data to Redis, the Worker processes votes from Redis, and the Result service reads final data from PostgreSQL.
+
 
 ## 3. Cloud Platform
 
