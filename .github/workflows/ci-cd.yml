@@ -30,6 +30,11 @@ jobs:
     - name: Set up gcloud CLI
       uses: google-github-actions/setup-gcloud@v2
 
+    - name: Install GKE gcloud auth plugin
+      run: |
+        gcloud components install gke-gcloud-auth-plugin --quiet
+        echo "USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> $GITHUB_ENV
+
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v3
       with:
