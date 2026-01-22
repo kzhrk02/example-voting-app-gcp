@@ -6,3 +6,14 @@ terraform/.terraform.lock.hcl
 # kubeconfig (security)
 kubeconfig.yaml
 kubeconfig.b64
+# macOS
+.DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Secrets
+github-actions-key.json
