@@ -17,11 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Get source code
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # 2. Authenticate to GCP
+    # Authenticate to GCP
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v2
       with:
@@ -40,7 +39,7 @@ jobs:
       with:
         terraform_version: 1.6.6
 
-    # 3. Terraform 
+    # Terraform 
     - name: Terraform Init
       run: |
         cd terraform
@@ -68,7 +67,6 @@ jobs:
           -t europe-west1-docker.pkg.dev/voting-app-gke-123/voting-app/vote:${{ github.sha }} \
           vote
   
-
     # Push Docker image
     - name: Push Docker image
       run: |
